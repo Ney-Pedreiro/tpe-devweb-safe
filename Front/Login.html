@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Login</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+    <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
+        <div class="card shadow-lg" style="width: 100%; max-width: 400px;">
+            <div class="card-body p-5">
+                <h1 class="card-title text-center mb-2 text-primary display-5">📚 Biblioteca</h1>
+                <p class="text-center text-muted mb-4">Sistema de Gestão de Livros</p>
+                
+                <!-- Abas de Login/Registro -->
+                <ul class="nav nav-tabs mb-4" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button 
+                            class="nav-link active" 
+                            id="login-tab" 
+                            data-bs-toggle="tab" 
+                            data-bs-target="#loginForm"
+                            type="button"
+                        >
+                            🔓 Login
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button 
+                            class="nav-link" 
+                            id="register-tab" 
+                            data-bs-toggle="tab" 
+                            data-bs-target="#registerForm"
+                            type="button"
+                        >
+                            ✍️ Registrar
+                        </button>
+                    </li>
+                </ul>
+                
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <!-- Login Form -->
+                    <div class="tab-pane fade show active" id="loginForm">
+                        <form id="loginFormElement">
+                            <div class="mb-3">
+                                <label for="loginUsername" class="form-label fw-bold">Usuário</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control form-control-lg" 
+                                    id="loginUsername" 
+                                    placeholder="Digite seu usuário"
+                                    required
+                                >
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="loginPassword" class="form-label fw-bold">Senha</label>
+                                <input 
+                                    type="password" 
+                                    class="form-control form-control-lg" 
+                                    id="loginPassword" 
+                                    placeholder="Digite sua senha"
+                                    required
+                                >
+                            </div>
+                            
+                            <div id="loginMsg" class="alert d-none mb-3" role="alert"></div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
+                                <span id="loginBtnText">Entrar</span>
+                                <span id="loginSpinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status">
+                                    <span class="visually-hidden">Carregando...</span>
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Register Form -->
+                    <div class="tab-pane fade" id="registerForm">
+                        <form id="registerFormElement">
+                            <div class="mb-3">
+                                <label for="registerUsername" class="form-label fw-bold">Usuário</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control form-control-lg" 
+                                    id="registerUsername" 
+                                    placeholder="Escolha um usuário"
+                                    required
+                                    minlength="3"
+                                >
+                                <small class="text-muted">Mínimo 3 caracteres</small>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="registerPassword" class="form-label fw-bold">Senha</label>
+                                <input 
+                                    type="password" 
+                                    class="form-control form-control-lg" 
+                                    id="registerPassword" 
+                                    placeholder="Digite uma senha"
+                                    required
+                                    minlength="4"
+                                >
+                                <small class="text-muted">Mínimo 4 caracteres</small>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="registerPasswordConfirm" class="form-label fw-bold">Confirmar Senha</label>
+                                <input 
+                                    type="password" 
+                                    class="form-control form-control-lg" 
+                                    id="registerPasswordConfirm" 
+                                    placeholder="Confirme sua senha"
+                                    required
+                                >
+                            </div>
+                            
+                            <div id="registerMsg" class="alert d-none mb-3" role="alert"></div>
+                            
+                            <button type="submit" class="btn btn-success btn-lg w-100 mb-3">
+                                <span id="registerBtnText">Criar Conta</span>
+                                <span id="registerSpinner" class="spinner-border spinner-border-sm ms-2 d-none" role="status">
+                                    <span class="visually-hidden">Carregando...</span>
+                                </span>
+                            </button>
+                            
+                            <p class="text-center text-muted small">
+                                Ao criar uma conta você será um usuário comum<br>
+                                com permissão para visualizar livros
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="border-top pt-3">
+                    <div class="alert alert-info alert-sm" role="alert">
+                        <small><strong>Demo:</strong> Tente user/user ou admin/admin</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

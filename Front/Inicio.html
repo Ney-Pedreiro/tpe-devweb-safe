@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Livros</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">📚 Biblioteca</span>
+            <div class="navbar-text text-white me-3" id="userInfo"></div>
+            <button class="btn btn-outline-light btn-sm" onclick="logoutUser()">Sair</button>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-4">
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="mb-3">📖 Catálogo de Livros</h2>
+                <p class="text-muted">Explore toda a nossa coleção de livros</p>
+            </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="row mb-4">
+            <div class="col-md-6 col-lg-3 mb-2">
+                <input 
+                    type="text" 
+                    id="filterTitle" 
+                    class="form-control" 
+                    placeholder="🔍 Filtrar por título..."
+                >
+            </div>
+            <div class="col-md-6 col-lg-3 mb-2">
+                <input 
+                    type="text" 
+                    id="filterAuthor" 
+                    class="form-control" 
+                    placeholder="🔍 Filtrar por autor..."
+                >
+            </div>
+            <div class="col-md-6 col-lg-3 mb-2">
+                <input 
+                    type="number" 
+                    id="filterYear" 
+                    class="form-control" 
+                    placeholder="Filtrar por ano..."
+                    min="1900"
+                    max="2100"
+                >
+            </div>
+            <div class="col-md-6 col-lg-3 mb-2">
+                <button class="btn btn-outline-secondary w-100" onclick="resetFilters()">
+                    ↻ Limpar Filtros
+                </button>
+            </div>
+        </div>
+
+        <!-- Aviso se nenhum livro encontrado -->
+        <div id="noBooks" class="alert alert-info d-none" role="alert">
+            Nenhum livro encontrado com os filtros selecionados.
+        </div>
+
+        <!-- Lista de Livros -->
+        <div class="row" id="booksList"></div>
+    </div>
+
+    <!-- Modal de Detalhes do Livro -->
+    <div class="modal fade" id="bookModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookModalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="bookModalBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
